@@ -82,6 +82,15 @@ class DoubleLinkedList {
     }
     return currentNode;
   }
+  delete(index) {
+    let currentNode = this.traverse(index);
+    let prevNode = this.traverse(index - 1);
+    let PostNode = currentNode.next;
+    prevNode.next = PostNode;
+    PostNode.pre = prevNode;
+
+    return this;
+  }
 }
 
 console.clear();
@@ -92,9 +101,10 @@ MyLL.append(30);
 MyLL.append(40);
 MyLL.append(50);
 MyLL.prepend(5);
-MyLL.printList();
 MyLL.insert(2, 1);
 console.log(`printing after insert`);
+MyLL.printList();
+MyLL.delete(2);
 MyLL.printList();
 console.log(MyLL);
 console.log(`===============PURGING============  `);
