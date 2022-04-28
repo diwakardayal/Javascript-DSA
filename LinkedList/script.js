@@ -84,13 +84,41 @@ class LinkedList {
     this.length--;
     return this;
   }
+
+  reverse() {
+    console.log(`==`)
+    console.log(this.tail);
+    console.log(`==`)
+    this.tail = this.head;
+    
+    while (this.tail.next !== null) {
+      this.tail = this.tail.next;
+      console.log(`-->`)
+      console.log(this.tail);
+      console.log(`-->`)
+    }
+    console.log(this.tail);
+  }
+  weird(){
+    while(this.head.next !==null){
+
+      this.head.next = this.head
+    }
+    console.log(this.head)
+    return this
+    
+  }
 }
 
+console.clear();
 const MyLL = new LinkedList(10);
 MyLL.append(20);
 MyLL.prepend(30);
 MyLL.insert(3, 140);
 MyLL.printList();
-MyLL.delete(1);
+// MyLL.delete(1);
 console.log(`--->`);
 MyLL.printList();
+// MyLL.weird()
+// MyLL.printList();
+console.log(MyLL)
