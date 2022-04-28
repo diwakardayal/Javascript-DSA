@@ -62,6 +62,5 @@ myStack.push(20);
 myStack.push(30);
 // myStack.peek();
 // myStack.pop();
-// myStack.traverse();
 
 console.log(myStack);
