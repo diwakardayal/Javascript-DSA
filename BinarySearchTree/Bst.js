@@ -38,86 +38,133 @@ class BST {
       }
     }
   }
+
+  look(value) {
+    let currentNode = this.root;
+
+    while (currentNode) {
+      
+      if(value < currentNode.left){
+        // left - left
+        currentNode = currentNode.left.left;
+      }
+      else if(value > currentNode.left){
+        // left - right
+
+        currentNodeNode = currentNode.left.right;
+      }
+
+      
+    }
+    return false;
+  }
+
+  savedPoint(value) { //value = 30
+    
+    let currentNode = this.root;
+   
+    while (currentNode) {
+      if (value < currentNode.left) {
+        currentNode = currentNode.left;
+      } else if (value > currentNode.right) {
+        currentNode = currentNode.right;
+      } else    {
+        // return true;
+        return currentNode.value;
+      }
+    }
+  }
+
+  remove(value) {}
 }
 
-console.clear()
+console.clear();
 const myBST = new BST();
 myBST.add(10);
 myBST.add(20);
 myBST.add(30);
-console.log(myBST)
+console.log(myBST.look(30))
+console.log(myBST.savedPoint(10));
+console.log(myBST);
 
 // OLDER
 
 // class Node {
 //   constructor(value) {
 //     this.value = value;
-//     this.left = null;
 //     this.right = null;
+//     this.left = null;
 //   }
 // }
 
 // class BST {
 //   constructor() {
 //     this.root = null;
-//     this.count = 0;
 //   }
 
-//   add(value) {
-//     var newNode = new Node(value);
-//     if (this.count === 0) {
-//       this.root = newNode;
-
-//       this.count++;
-//       return this;
-//     } else {
-//       const currenNode = this.root;
-//       newNode.left = newNode;
-//       this.count++;
-//     }
-
-//     return this;
-//   }
-
-//   CN(currentNode) {
+//   insert(value) {
 //     const newNode = new Node(value);
-//     const currenNode = this.root;
 
-//     if (!this.root) {
+//     if (this.root === null) {
 //       this.root = newNode;
-//       return null;
 //     } else {
-//       if (newNode.value > currentNode.value) {
-//         this.CN(currentNode.right);
-//       } else if (newNode.value < currenNode.value) {
-//         this.CN(currentNode.left);
-//       } else if (newNode.value === currenNode.value) {
-//         return `YOU FOUND IT`;
-//       }
-//     }
-//   }
+//       let currentNode = this.root;
+//       while (1) {
+//         if (value < currentNode.value) {
+//           // LEFT
+//           if (!currentNode.left) {
+//             currentNode.left = newNode;
+//             return this;
+//           }
 
-//   fun(value) {
-//     const newNode = new Node(value);
-//     const currentNode = newNode;
-//     let counter = 0;
-//     while (counter !== 0) {
-//       if (!this.root) {
-//         this.root = newNode;
-//         counter++;
-//         return null;
-//       } else {
-//         if (currentNode.value) {
+//           currentNode = currentNode.left;
+//         }
+//         // RIGHT
+//         else {
+//           if (!currentNode.right) {
+//             currentNode.right = newNode;
+//             return this;
+//           }
+//           currentNode = currentNode.right;
 //         }
 //       }
-//       counter++;
 //     }
 //   }
-// }
 
+//   look(value) {
+//     let currentNode = this.root;
+//     while (1) {
+//       if (value > currentNode.value) {
+//         currentNode = currentNode.right;
+//         if(!currentNode.right){
+//           return currentNode
+//         }
+//       } else if (value < currentNode.value) {
+//         currentNode = currentNode.left;
+//         if(!currentNode.left){
+//           return currentNode
+//         }
+//       } else if (value === currentNode.value) {
+//         console.log(`YEP its here`)
+//         return currentNode
+//       }else{
+//         console.log(`NOPE itnot here`)
+//         return currentNode
+//       }
+//     }
+//   }
+
+//   remove(value){
+//     const newNode = this.look(value);
+
+//   }
+// }
 // console.clear();
 // const myTree = new BST();
-// // myTree.add(10);
-// // myTree.add(20);
-// myTree.CN(99);
+// myTree.insert(10);
+// myTree.insert(20);
+// myTree.insert(9);
+// myTree.insert(11);
+// console.log(myTree.look(1))
+
 // console.log(myTree);
