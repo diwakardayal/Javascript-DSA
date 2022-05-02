@@ -36,3 +36,33 @@ myGraph.addEdge("0", "2");
 myGraph.addEdge("6", "5");
 
 console.log(myGraph);
+
+console.clear();
+
+//Fabinacci Series
+
+let sum = 0;
+let first = 0;
+let second = 0;
+let third;
+function recur(n) {
+  third = first + second;
+  first = second;
+  second = third;
+  console.log(third);
+  if (first === 0) {
+    first = 1;
+  }
+  if (n === 0) {
+    return third;
+  }
+  return recur(--n);
+}
+
+console.log(recur(5));
+
+const st = "GIGI";
+const hi = st.split("");
+console.log(hi.pop());
+console.log(hi.pop());
+console.log(hi);
