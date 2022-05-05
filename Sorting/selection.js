@@ -1,22 +1,18 @@
-const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
-
+const numbers = [9, 6, 7, 1, 3, 5];
 let saved;
-let presaved
 function SelectionSort(array) {
-  for (let i = 0; i < array.length - 1; i++) {
+  for (let i = 0; i < array.length; i++) {
     {
-      for (let j = 0; j < array.length - 1; j++) {
-        if (array[j] < array[j + 1]) {
-          saved = array[j];
-        }
+      saved = i;
+      for (let j = i + 1; j < array.length; j++) {
+        console.log(array);
 
-        if(presaved < saved ){
-presaved = saved;
+        if (array[saved] < array[j]) {
+          saved = j;
         }
       }
-      console.log(array)
-      let temp = presaved;
-      presaved = array[i];
+      let temp = array[saved];
+      array[saved] = array[i];
       array[i] = temp;
     }
   }
