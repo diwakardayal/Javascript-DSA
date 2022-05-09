@@ -1,21 +1,22 @@
-const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+const numbers = [7, 8, 5, 2, 4, 6, 3];
 
 function insertionSort(array) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] < array[0]) {
-      array.unshift(array.splice(i, 1)[0]);
-    } else {
-      if (array[i] < array[i - 1]) {
-        for (var j = 1; j < i; j++) {
-          if (array[i] >= array[j - 1] && array[i] < array[j]) {
-            //move number to the right spot
-            array.splice(j, 0, array.splice(i, 1)[0]);
-          }
-        }
+  for (let i = 1; i < array.length; i++) {
+    let temp = array[i];
+    let j = i - 1;
+    for (; j >= 0; j--) {
+      console.log(array);
+      if (array[j] > temp) {
+        array[j + 1] = array[j];
+      } else {
+        break;
       }
     }
+    array[j + 1] = temp;
   }
 }
 
+console.clear();
+console.log(`--------------------->`);
 insertionSort(numbers);
 console.log(numbers);
